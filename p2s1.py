@@ -1,19 +1,26 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
+"""
+Each new term in the Fibonacci sequence is generated
+by adding the previous two terms. By starting with 1 and 2,
+the first 10 terms will be:
 
-res = 2
+1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 
-prevprev = 1
+By considering the terms in the Fibonacci sequence
+whose values do not exceed four million, find the sum of the even-valued terms.
+"""
+result = 2
+
+prev_prev = 1
 prev = 2
 value = 0
 
 while value <= 4000000:
-    value = prevprev + prev
-    print(value)
-    prevprev = prev
+    value = prev_prev + prev
+    prev_prev = prev
     prev = value
     if value % 2 == 0:
-        res += value
+        result += value
 
-print('---------------')
-print(res)
+print(result)
